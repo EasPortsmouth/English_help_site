@@ -1,81 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Menu</title>
+    <title>Angleščina na lahek način</title>
     <style>
         /* General Setup */
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
-            background-color: #121212; /* Dark background */
+            background-color: #121212; 
             color: white;
             margin: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-            overflow: hidden;
+            min-height: 100vh; /* Changed from height to min-height for better fit */
+            padding: 20px;
+            box-sizing: border-box;
         }
 
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            letter-spacing: 2px;
+            font-size: 2rem;
+            color: #00ff88;
+            margin-bottom: 10px;
             text-transform: uppercase;
+        }
+
+        /* Styling for your long intro text */
+        .description {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            max-width: 600px; /* Limits width so it doesn't take over the screen */
+            text-align: center;
+            margin-bottom: 40px;
+            color: #cccccc;
         }
 
         /* The Menu Layout */
         .menu-container {
             display: flex;
-            gap: 25px;
+            gap: 20px;
             flex-wrap: wrap;
             justify-content: center;
         }
 
         /* The Interactive Buttons */
         .section-card {
-            width: 120px;
-            height: 120px;
+            width: 100px;
+            height: 100px;
             background-color: #1f1f1f;
             border: 2px solid #333;
             border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3.5rem;
+            font-size: 2.5rem;
             font-weight: bold;
-            color: #00ff88; /* Neon Green */
+            color: #00ff88;
             text-decoration: none;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        /* Smooth Hover Effect */
         .section-card:hover {
-            transform: scale(1.1) translateY(-10px);
+            transform: scale(1.1) translateY(-5px);
             background-color: #00ff88;
             color: #121212;
-            box-shadow: 0 15px 30px rgba(0, 255, 136, 0.4);
+            box-shadow: 0 10px 20px rgba(0, 255, 136, 0.3);
             border-color: #00ff88;
         }
 
-        /* Mobile Friendly */
         @media (max-width: 500px) {
-            .menu-container {
-                gap: 15px;
-            }
-            .section-card {
-                width: 90px;
-                height: 90px;
-                font-size: 2.5rem;
-            }
+            h1 { font-size: 1.5rem; }
+            .description { font-size: 1rem; }
+            .section-card { width: 80px; height: 80px; font-size: 2rem; }
         }
     </style>
 </head>
 <body>
 
-    <h1>Dobrodošli na spletni strani. Stran je namenjena učenju angleščine na lahek način. Vse je preverjeno in najdete lahko zanimivosti. Prosimo, izberite svoj razrwd:</h1>
+    <h1>Dobrodošli!</h1>
+    
+    <p class="description">
+        Stran je namenjena učenju angleščine na lahek način. <br>
+        Vse je preverjeno in najdete lahko zanimivosti. <br><br>
+        <strong>Prosimo, izberite svoj razred:</strong>
+    </p>
 
     <div class="menu-container">
         <a href="six.html" target="_blank" class="section-card">6</a>
@@ -86,4 +96,3 @@
 
 </body>
 </html>
-
