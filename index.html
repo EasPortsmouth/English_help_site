@@ -1,7 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My GitHub Site</title>
+    <style>
+        /* General styling for a dark, smooth look */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: white;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        h1 { margin-bottom: 30px; }
+
+        /* The Menu Container */
+        .menu-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* The Individual Section Cards */
+        .section-card {
+            width: 150px;
+            height: 150px;
+            background-color: #1f1f1f;
+            border: 2px solid #333;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease; /* This creates the "smooth" feel */
+            text-decoration: none;
+            color: #00ff88;
+        }
+
+        /* Hover effects */
+        .section-card:hover {
+            transform: translateY(-10px);
+            background-color: #00ff88;
+            color: #121212;
+            box-shadow: 0 10px 20px rgba(0, 255, 136, 0.3);
+        }
+
+        /* Responsive: Stack cards on small screens */
+        @media (max-width: 600px) {
+            .menu-container { flex-direction: column; }
+        }
+    </style>
+</head>
 <body>
-    <h1>Hello World!</h1>
-    <p>This is my first site on GitHub Pages.</p>
+
+    <h1>Main Menu</h1>
+
+    <div class="menu-container">
+        <a href="#section6" class="section-card">6</a>
+        <a href="#section7" class="section-card">7</a>
+        <a href="#section8" class="section-card">8</a>
+        <a href="#section9" class="section-card">9</a>
+    </div>
+
+    <div style="margin-top: 100px; width: 80%; text-align: center;">
+        <div id="section6" style="padding: 50px 0;">
+            <h2>Section 6</h2>
+            <p>Welcome to the first part of my ideas. This is where info for 6 goes.</p>
+        </div>
+        <div id="section7" style="padding: 50px 0;">
+            <h2>Section 7</h2>
+            <p>Details about project number 7 live right here.</p>
+        </div>
+        <div id="section8" style="padding: 50px 0;">
+            <h2>Section 8</h2>
+            <p>A place for all things related to 8.</p>
+        </div>
+        <div id="section9" style="padding: 50px 0;">
+            <h2>Section 9</h2>
+            <p>The final section with your coolest content.</p>
+        </div>
+    </div>
+
 </body>
 </html>
+
