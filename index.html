@@ -15,7 +15,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 100vh; /* Changed from height to min-height for better fit */
+            min-height: 100vh;
             padding: 20px;
             box-sizing: border-box;
         }
@@ -27,11 +27,10 @@
             text-transform: uppercase;
         }
 
-        /* Styling for your long intro text */
         .description {
             font-size: 1.1rem;
             line-height: 1.5;
-            max-width: 600px; /* Limits width so it doesn't take over the screen */
+            max-width: 600px;
             text-align: center;
             margin-bottom: 40px;
             color: #cccccc;
@@ -43,6 +42,7 @@
             gap: 20px;
             flex-wrap: wrap;
             justify-content: center;
+            margin-bottom: 50px; /* Space for the quote box */
         }
 
         /* The Interactive Buttons */
@@ -70,6 +70,27 @@
             border-color: #00ff88;
         }
 
+        /* --- Motivational Box Styling --- */
+        .quote-box {
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            padding: 15px 25px;
+            border-radius: 12px;
+            max-width: 500px;
+            text-align: center;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        #quote-text {
+            font-style: italic;
+            color: #00ff88;
+            font-size: 1rem;
+        }
+
         @media (max-width: 500px) {
             h1 { font-size: 1.5rem; }
             .description { font-size: 1rem; }
@@ -93,6 +114,45 @@
         <a href="eight.html" target="_blank" class="section-card">8</a>
         <a href="nine.html" target="_blank" class="section-card">9</a>
     </div>
+
+    <div class="quote-box" id="q-box">
+        <p id="quote-text">Nalaganje motivacije...</p>
+    </div>
+
+    <script>
+        const quotes = [
+            "Znanje angleščine ti odpira vrata v svet!",
+            "Vsak dan se nauči eno novo besedo.",
+            "Napake so dokaz, da se trudiš. Ne obupaj!",
+            "Angleščina je zabavna, ko jo razumeš.",
+            "Tvoj trud danes je tvoj uspeh jutri!",
+            "Speak English and explore the world!",
+            "Verjemi vase, zmoreš več kot si misliš."
+        ];
+
+        let currentIndex = 0;
+        const quoteElement = document.getElementById("quote-text");
+        const boxElement = document.getElementById("q-box");
+
+        function updateQuote() {
+            // Fade out
+            boxElement.style.opacity = 0;
+
+            setTimeout(() => {
+                // Change text
+                currentIndex = (currentIndex + 1) % quotes.length;
+                quoteElement.innerText = quotes[currentIndex];
+                // Fade in
+                boxElement.style.opacity = 1;
+            }, 500); // Waits for fade out to finish
+        }
+
+        // Initialize first quote
+        quoteElement.innerText = quotes[0];
+
+        // Set interval for 30 seconds (30000 milliseconds)
+        setInterval(updateQuote, 30000);
+    </script>
 
 </body>
 </html>
