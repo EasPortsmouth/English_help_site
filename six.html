@@ -15,7 +15,6 @@
             padding: 0;
         }
 
-        /* Header */
         header {
             background-color: #1f1f1f;
             padding: 40px 20px;
@@ -30,43 +29,61 @@
             text-transform: uppercase;
         }
 
-        /* Main Content Container */
         .container {
             max-width: 800px;
             margin: 40px auto;
             padding: 0 20px;
         }
 
-        /* Section Styling */
-        .content-section {
+        /* --- Accordion Styling --- */
+        details {
             background: #1a1a1a;
             border-left: 5px solid #00ff88;
-            padding: 25px;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
             border-radius: 0 15px 15px 0;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+            overflow: hidden;
         }
 
-        .content-section:hover {
-            transform: translateX(10px);
-            background: #222;
-        }
-
-        .content-section h2 {
+        /* The clickable "Heading" part */
+        summary {
+            padding: 20px;
+            font-size: 1.3rem;
+            font-weight: bold;
             color: #00ff88;
-            margin-top: 0;
+            cursor: pointer;
+            list-style: none; /* Removes the default arrow */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Add a custom plus icon that changes to minus */
+        summary::after {
+            content: '+';
             font-size: 1.5rem;
         }
 
-        .content-section p {
-            color: #ccc;
-            margin-bottom: 0;
+        details[open] summary::after {
+            content: '−';
         }
 
-        /* Back Button */
+        summary:hover {
+            background: #222;
+        }
+
+        /* The hidden text inside */
+        .content {
+            padding: 0 20px 20px 20px;
+            color: #ccc;
+            border-top: 1px solid #333;
+        }
+
+        /* --- End Accordion Styling --- */
+
         .back-btn {
             display: inline-block;
-            margin-top: 20px;
+            margin-top: 30px;
             color: #00ff88;
             text-decoration: none;
             font-weight: bold;
@@ -93,42 +110,52 @@
 
     <header>
         <h1>Section 6</h1>
-        <p>Explore the details and updates for this module.</p>
+        <p>Klikni na razdelek, da vidiš vsebino.</p>
     </header>
 
     <div class="container">
         
-        <div class="content-section">
-            <h2>01. Introduction</h2>
-            <p>This is where you describe the beginning of your idea. Explain the "Why" behind this section and what visitors should expect to find here.</p>
-        </div>
+        <details>
+            <summary>01. Introduction</summary>
+            <div class="content">
+                <p>This is where you describe the beginning of your idea. Explain the "Why" behind this section and what visitors should expect to find here.</p>
+            </div>
+        </details>
 
-        <div class="content-section">
-            <h2>02. Core Features</h2>
-            <p>List the most important parts of this project. You can talk about the tools you used, the goals you met, or the unique aspects of your work.</p>
-        </div>
+        <details>
+            <summary>02. Core Features</summary>
+            <div class="content">
+                <p>List the most important parts of this project. You can talk about the tools you used, the goals you met, or the unique aspects of your work.</p>
+            </div>
+        </details>
 
-        <div class="content-section">
-            <h2>03. Development Process</h2>
-            <p>Write about how you built this. Sharing the journey—including the challenges and the solutions—makes the site much more interesting.</p>
-        </div>
+        <details>
+            <summary>03. Development Process</summary>
+            <div class="content">
+                <p>Write about how you built this. Sharing the journey—including the challenges and the solutions—makes the site much more interesting.</p>
+            </div>
+        </details>
 
-        <div class="content-section">
-            <h2>04. Results & Data</h2>
-            <p>Add the meat of your content here. Whether it's statistics, findings, or finished designs, this is the place to showcase the final product.</p>
-        </div>
+        <details>
+            <summary>04. Results & Data</summary>
+            <div class="content">
+                <p>Add the meat of your content here. Whether it's statistics, findings, or finished designs, this is the place to showcase the final product.</p>
+            </div>
+        </details>
 
-        <div class="content-section">
-            <h2>05. Future Updates</h2>
-            <p>What's next for Section 6? Mention upcoming features or ideas you plan to implement to keep your audience coming back.</p>
-        </div>
+        <details>
+            <summary>05. Future Updates</summary>
+            <div class="content">
+                <p>What's next for Section 6? Mention upcoming features or ideas you plan to implement to keep your audience coming back.</p>
+            </div>
+        </details>
 
-        <a href="index.html" class="back-btn">← Return to Menu</a>
+        <a href="index.html" class="back-btn">← Nazaj na meni</a>
 
     </div>
 
     <footer>
-        &copy; 2026 Your Name - Hosted on GitHub Pages
+        &copy; 2026 Angleščina na lahek način - Hosted on GitHub Pages
     </footer>
 
 </body>
