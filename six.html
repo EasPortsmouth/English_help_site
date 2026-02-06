@@ -1,7 +1,135 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 6 - Project Details</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        header {
+            background-color: #1f1f1f;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 3px solid #00ff88;
+        }
+
+        header h1 {
+            color: #00ff88;
+            margin: 0;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Section Styling */
+        .content-section {
+            background: #1a1a1a;
+            border-left: 5px solid #00ff88;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 0 15px 15px 0;
+            transition: transform 0.3s ease;
+        }
+
+        .content-section:hover {
+            transform: translateX(10px);
+            background: #222;
+        }
+
+        .content-section h2 {
+            color: #00ff88;
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+
+        .content-section p {
+            color: #ccc;
+            margin-bottom: 0;
+        }
+
+        /* Back Button */
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            color: #00ff88;
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid #00ff88;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #00ff88;
+            color: #121212;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+    </style>
+</head>
 <body>
-    <h1>Hello World!</h1>
-    <p>This is my first site on GitHub Pages.</p>
+
+    <header>
+        <h1>Section 6</h1>
+        <p>Explore the details and updates for this module.</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="content-section">
+            <h2>01. Introduction</h2>
+            <p>This is where you describe the beginning of your idea. Explain the "Why" behind this section and what visitors should expect to find here.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>02. Core Features</h2>
+            <p>List the most important parts of this project. You can talk about the tools you used, the goals you met, or the unique aspects of your work.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>03. Development Process</h2>
+            <p>Write about how you built this. Sharing the journey—including the challenges and the solutions—makes the site much more interesting.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>04. Results & Data</h2>
+            <p>Add the meat of your content here. Whether it's statistics, findings, or finished designs, this is the place to showcase the final product.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>05. Future Updates</h2>
+            <p>What's next for Section 6? Mention upcoming features or ideas you plan to implement to keep your audience coming back.</p>
+        </div>
+
+        <a href="index.html" class="back-btn">← Return to Menu</a>
+
+    </div>
+
+    <footer>
+        &copy; 2026 Your Name - Hosted on GitHub Pages
+    </footer>
+
 </body>
 </html>
