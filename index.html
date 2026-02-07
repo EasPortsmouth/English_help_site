@@ -42,7 +42,7 @@
             gap: 20px;
             flex-wrap: wrap;
             justify-content: center;
-            margin-bottom: 50px; /* Space for the quote box */
+            margin-bottom: 30px; 
         }
 
         /* The Interactive Buttons */
@@ -68,6 +68,25 @@
             color: #121212;
             box-shadow: 0 10px 20px rgba(0, 255, 136, 0.3);
             border-color: #00ff88;
+        }
+
+        /* --- About Us Link Styling --- */
+        .info-link {
+            margin-bottom: 30px;
+            font-size: 1rem;
+            color: #cccccc;
+        }
+
+        .info-link a {
+            color: #00ff88;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .info-link a:hover {
+            text-decoration: underline;
+            color: #ffffff;
         }
 
         /* --- Motivational Box Styling --- */
@@ -115,6 +134,10 @@
         <a href="nine.html" target="_blank" class="section-card">9</a>
     </div>
 
+    <p class="info-link">
+        Želite izvedeti več o nas? <a href="about.html">Kliknite tukaj</a>
+    </p>
+
     <div class="quote-box" id="q-box">
         <p id="quote-text">Nalaganje motivacije...</p>
     </div>
@@ -136,8 +159,6 @@
             "Ni treba biti popoln. Pomembno je poskusiti.",
             "Iz napak se učimo, zato naj te ne bo strah delati napake. Napake so del življenja.",
             "Celo življenje se učimo. Naj te ne bo strah napak in neznanja temveč se nauči."
-            
-            
         ];
 
         let currentIndex = 0;
@@ -145,24 +166,17 @@
         const boxElement = document.getElementById("q-box");
 
         function updateQuote() {
-            // Fade out
             boxElement.style.opacity = 0;
-
             setTimeout(() => {
-                // Change text
                 currentIndex = (currentIndex + 1) % quotes.length;
                 quoteElement.innerText = quotes[currentIndex];
-                // Fade in
                 boxElement.style.opacity = 1;
-            }, 500); // Waits for fade out to finish
+            }, 500);
         }
 
-        // Initialize first quote
         quoteElement.innerText = quotes[0];
-
-        // Set interval for 30 seconds (30000 milliseconds)
         setInterval(updateQuote, 30000);
     </script>
-
 </body>
 </html>
+
