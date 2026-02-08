@@ -5,10 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Angleščina na lahek način</title>
     <style>
-        /* General Setup */
+        /* Dynamic Background Animation */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
-            background-color: #121212; 
+            /* Animated Gradient Background */
+            background: linear-gradient(-45deg, #0f0f0f, #1a2a22, #0d1b2a, #121212);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
             color: white;
             margin: 0;
             display: flex;
@@ -18,63 +27,74 @@
             min-height: 100vh;
             padding: 20px;
             box-sizing: border-box;
+            overflow-x: hidden;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: #00ff88;
             margin-bottom: 10px;
             text-transform: uppercase;
+            text-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+            text-align: center;
         }
 
         .description {
             font-size: 1.1rem;
-            line-height: 1.5;
+            line-height: 1.6;
             max-width: 600px;
             text-align: center;
             margin-bottom: 40px;
-            color: #cccccc;
+            color: rgba(255, 255, 255, 0.8);
         }
 
         /* The Menu Layout */
         .menu-container {
             display: flex;
-            gap: 20px;
+            gap: 25px;
             flex-wrap: wrap;
             justify-content: center;
-            margin-bottom: 30px; 
+            margin-bottom: 40px; 
         }
 
-        /* The Interactive Buttons */
+        /* --- Glassmorphism Cards --- */
         .section-card {
-            width: 100px;
-            height: 100px;
-            background-color: #1f1f1f;
-            border: 2px solid #333;
-            border-radius: 20px;
+            width: 110px;
+            height: 110px;
+            /* Frosted glass effect */
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: bold;
             color: #00ff88;
             text-decoration: none;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
         }
 
         .section-card:hover {
-            transform: scale(1.1) translateY(-5px);
-            background-color: #00ff88;
-            color: #121212;
-            box-shadow: 0 10px 20px rgba(0, 255, 136, 0.3);
+            transform: scale(1.1) translateY(-10px);
+            background: rgba(0, 255, 136, 0.2);
             border-color: #00ff88;
+            color: white;
+            box-shadow: 0 0 25px rgba(0, 255, 136, 0.4);
         }
 
-        /* --- About Us Link Styling --- */
+        /* --- Info Link --- */
         .info-link {
             margin-bottom: 30px;
             font-size: 1rem;
-            color: #cccccc;
+            color: rgba(255, 255, 255, 0.6);
+            background: rgba(0, 0, 0, 0.2);
+            padding: 10px 20px;
+            border-radius: 50px;
         }
 
         .info-link a {
@@ -85,35 +105,38 @@
         }
 
         .info-link a:hover {
-            text-decoration: underline;
             color: #ffffff;
+            text-shadow: 0 0 8px #00ff88;
         }
 
-        /* --- Motivational Box Styling --- */
+        /* --- Glassy Quote Box --- */
         .quote-box {
-            background-color: #1a1a1a;
-            border: 1px solid #333;
-            padding: 15px 25px;
-            border-radius: 12px;
-            max-width: 500px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px 30px;
+            border-radius: 18px;
+            max-width: 550px;
             text-align: center;
-            min-height: 60px;
+            min-height: 70px;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: opacity 0.5s ease-in-out;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
         #quote-text {
             font-style: italic;
             color: #00ff88;
-            font-size: 1rem;
+            font-size: 1.05rem;
+            line-height: 1.4;
         }
 
         @media (max-width: 500px) {
-            h1 { font-size: 1.5rem; }
+            h1 { font-size: 1.7rem; }
             .description { font-size: 1rem; }
-            .section-card { width: 80px; height: 80px; font-size: 2rem; }
+            .section-card { width: 90px; height: 90px; font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -135,7 +158,7 @@
     </div>
 
     <p class="info-link">
-        Želite izvedeti več o našem projektu ali tej spletni strani? <a href="about.html">Kliknite tukaj</a>
+        Želite izvedeti več o našem projektu? <a href="about.html">Kliknite tukaj</a>
     </p>
 
     <div class="quote-box" id="q-box">
@@ -152,13 +175,13 @@
             "Speak English and explore the world!",
             "Verjemi vase, zmoreš več kot si misliš.",
             "Učiti se 10 minut dnevno je boljše kot učiti se 5 ur en dan pred testom.",
-            "Poslušaj angleško glasbo in ob tem spremljaj besedilo ter poj, lahko se naučiš bolje.",
+            "Poslušaj angleško glasbo in ob tem spremljaj besedilo ter poj.",
             "Če ne razumeš, vprašaj. Nihče na svetu ni popoln.",
             "Ponavljanje je skrivnost dobrega znanja.",
             "Ne prevajaj celotnih besedil - raje se nauči pomena določene besede.",
             "Ni treba biti popoln. Pomembno je poskusiti.",
-            "Iz napak se učimo, zato naj te ne bo strah delati napake. Napake so del življenja.",
-            "Celo življenje se učimo. Naj te ne bo strah napak in neznanja temveč se nauči."
+            "Iz napak se učimo, zato naj te ne bo strah.",
+            "Celo življenje se učimo. Naj te ne bo strah napak."
         ];
 
         let currentIndex = 0;
@@ -175,8 +198,9 @@
         }
 
         quoteElement.innerText = quotes[0];
-        setInterval(updateQuote, 30000);
+        setInterval(updateQuote, 20000); // 20 seconds as requested
     </script>
 </body>
 </html>
+
 
